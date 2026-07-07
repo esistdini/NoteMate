@@ -1,0 +1,277 @@
+:root {
+    --primary:#4f46e5;
+    --danger:#ef4444;
+    --success:#10b981;
+    --white:#ffffff;
+    --border:#e5e7eb;
+    --text:#374151;
+}
+
+
+/* Main Container */
+
+.showNote {
+
+    width:min(900px,92%);
+    margin:2rem auto;
+
+}
+
+
+/* Top Header */
+
+.notesHeader {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:1rem 1.2rem;
+
+    background:var(--white);
+
+    border-radius:16px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* Count Box */
+
+.infoBox {
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:.95rem;
+    color:var(--text);
+
+}
+
+
+.infoBox strong {
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    color:white;
+
+    background:var(--primary);
+
+}
+
+
+/* Clear Button */
+
+.clearBtn {
+
+    border:none;
+
+    padding:10px 22px;
+
+    border-radius:10px;
+
+    background:var(--danger);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.clearBtn:hover {
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
+}
+
+
+
+/* Notes Grid */
+
+.notesGrid {
+
+    list-style:none;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.2rem;
+
+}
+
+
+
+/* Individual Note */
+
+.noteCard {
+    height: 180px;
+    min-width: 0; /* Important for grid overflow */
+
+    padding: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+
+
+.noteCard:hover {
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.12);
+
+}
+
+
+
+/* Note Text */
+.noteCard p {
+    color: var(--text);
+    line-height: 1.5;
+
+    /* Keep text inside the card */
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    /* Limit visible lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+
+/* Buttons */
+
+.noteActions {
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+}
+
+
+
+.noteActions button {
+
+    border:none;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+.delete {
+
+    background:var(--danger);
+
+}
+
+
+.noteActions button:hover {
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* Tablet */
+
+@media(max-width:768px){
+
+
+.notesGrid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.showNote {
+
+    width:94%;
+
+}
+
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:480px){
+
+
+.notesHeader {
+
+    flex-direction:column;
+
+    gap:15px;
+
+    align-items:stretch;
+
+}
+
+
+.clearBtn {
+
+    width:100%;
+
+}
+
+
+.noteCard {
+
+    height:170px;
+
+}
+
+
+}
